@@ -1,0 +1,9 @@
+// Con este código se configuran las CORS de Google Cloud Storage
+
+[
+  {
+    "origin": ["*"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]

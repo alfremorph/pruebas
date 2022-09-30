@@ -1,0 +1,76 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--script>var wid = Math.floor(device-width)</script-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morph Viewer</title>
+  <!-- Review links (css) -->
+  <!--link rel='stylesheet' type='text/css' media='screen' href='main.css'-->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+      model-viewer{
+        width: 100vw;
+        height: 100vh;
+        margin: none;
+        padding:none;
+        background: none;
+        cursor: crosshair;
+      }   
+  </style>
+</head>
+<body scroll="no" style="overflow: hidden">
+
+  <model-viewer {
+    bounds="tight"
+    id="displayer-demo" 
+    src="https://mocarabes.com/wp-content/uploads/videos/1432.glb" 
+    ar ar-modes="scene-viewer webxr quick-look"
+    alt="MorphDisplayer"
+
+    camera-controls loading="lazy"
+    enable-pan 
+    camera-controls
+    touch-action="none"
+
+    camera-target="190m 50m 70m"
+
+    camera-orbit="0deg 0deg 100m" 
+    orbit-sensitivity="0.8"
+    min-camera-orbit="auto 0.0deg 1.0m" 
+    max-camera-orbit="auto 85.0deg auto" 
+
+    field-of-view="60deg" 
+    min-field-of-view="40deg" 
+    max-field-of-view="90deg" 
+    interpolation-decay="150" 
+    min-camera-orbit="auto auto 5%" 
+    
+    environment-image="https://mocarabes.com/wp-content/uploads/videos/Studio.hdr"
+    shadow-intensity="1.5" 
+    exposure="1.2" 
+    shadow-softness="0.75"
+
+    poster="https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator_selective.gif"
+    interaction-prompt="none"
+  }>
+  
+  <div id="lazy-load-poster" slot="poster"></div>
+
+  </model-viewer>
+
+  <style type="text/css">
+
+    #lazy-load-poster {
+      position: absolute;
+      left: 0; right: 0; top: 0; bottom: 0;
+      background-image: url("http://www.centralemontemartini.org/sites/default/files/ajax-loader.gif");
+      background-size: cover;
+      background-clip: content-box;
+      background-repeat: none;
+      background-position: bottom;
+      z-index: 98;
+    }
+
+  </style>
+
+</body>
